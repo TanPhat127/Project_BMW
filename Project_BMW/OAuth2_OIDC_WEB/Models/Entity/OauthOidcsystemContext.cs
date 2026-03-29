@@ -28,6 +28,8 @@ public partial class OauthOidcsystemContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+
         modelBuilder.Entity<ExternalLogin>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__External__3214EC07107710EB");
