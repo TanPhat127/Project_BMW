@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OAuth2_OIDC_WEB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23b355b70f67156758a21635df8b10d290a05cc6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e3ec41e700c20997a9e525121c568cad0da7409")]
 [assembly: System.Reflection.AssemblyProductAttribute("OAuth2_OIDC_WEB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OAuth2_OIDC_WEB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
