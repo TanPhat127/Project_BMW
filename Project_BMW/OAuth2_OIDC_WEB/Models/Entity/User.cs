@@ -6,32 +6,31 @@ using Microsoft.EntityFrameworkCore;
 
 namespace OAuth2_OIDC_WEB.Models.Entity;
 
+[Index("Email", Name = "UQ__Users__A9D10534318B0062", IsUnique = true)]
 public partial class User
 {
     [Key]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
-    [Column("userName")]
-    public string UserName { get; set; } = null!;
+    [StringLength(255)]
+    public string? Email { get; set; }
 
-    [Column("birthDay")]
-    public DateTime BirthDay { get; set; }
+    [StringLength(255)]
+    public string DisplayName { get; set; } = null!;
 
-    [Column("diaChi")]
-    public string DiaChi { get; set; } = null!;
+    [StringLength(500)]
+    public string? PictureUrl { get; set; }
 
-    [Column("phoneNumber")]
-    public string PhoneNumber { get; set; } = null!;
+    public DateTime? CreatedAt { get; set; }
 
-    [Column("email")]
-    public string Email { get; set; } = null!;
+    public bool? IsActive { get; set; }
 
-    [Column("password")]
-    public string Password { get; set; } = null!;
+    [InverseProperty("User")]
+    public virtual ICollection<ExternalLogin> ExternalLogins { get; set; } = new List<ExternalLogin>();
 
-    [Column("gioiTinh")]
-    public string GioiTinh { get; set; } = null!;
+    [InverseProperty("User")]
+    public virtual ICollection<LocalAccount> LocalAccounts { get; set; } = new List<LocalAccount>();
 
-    [Column("vaitro")]
-    public string Vaitro { get; set; } = null!;
+    [InverseProperty("User")]
+    public virtual ICollection<UserSession> UserSessions { get; set; } = new List<UserSession>();
 }
