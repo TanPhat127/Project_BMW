@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ipvOUKf6Ly0=",
+  "dgSpecHash": "UUTuj0widy0=",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\Đồ án các môn\\HK2_2526\\BMW&UD\\Project_BMW_Final\\Project_BMW\\OAuth2_OIDC_WEB\\OAuth2_OIDC_WEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\bcrypt.net-next\\4.0.0\\bcrypt.net-next.4.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\8.0.25\\microsoft.aspnetcore.authentication.facebook.8.0.25.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.25\\microsoft.aspnetcore.authentication.google.8.0.25.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

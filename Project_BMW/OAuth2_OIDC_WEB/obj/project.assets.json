@@ -47,6 +47,19 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -59,6 +72,38 @@
             "related": ".xml"
           }
         }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/8.0.25": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.Authentication.Google/8.0.25": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
@@ -1533,6 +1578,35 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "BCrypt.Net-Next/4.0.0": {
+      "sha512": "1rjyVK+/YJnCElALjVNt/aUPIIRoFocFZzblsiFo2giA3WVYExk/E5UT6i4RqEHwIwEwoQHt02I1llaEIQ59eQ==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.0.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net40/BCrypt.Net-Next.dll",
+        "lib/net40/BCrypt.Net-Next.xml",
+        "lib/net452/BCrypt.Net-Next.dll",
+        "lib/net452/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1549,6 +1623,36 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/8.0.25": {
+      "sha512": "bAvwjcxI2Osdvt9ujXqzWAxqkjHpN5euThQgUa6SsvDhL/4V3vswdo55e1UaTzouj0Q+GXxzRQ+NDtIVTWZJCw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.facebook/8.0.25",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.xml",
+        "microsoft.aspnetcore.authentication.facebook.8.0.25.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.facebook.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/8.0.25": {
+      "sha512": "3XkuyuuLneQwjLKgrFwg5iixrqcCVqH8Zas+OfR8ftWBh8F76llQlPubiYzePYiR0crMmiRY0f6ZTR1LKNmCBA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/8.0.25",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.8.0.25.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -3997,6 +4101,9 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BCrypt.Net-Next >= 4.0.0",
+      "Microsoft.AspNetCore.Authentication.Facebook >= 8.0.25",
+      "Microsoft.AspNetCore.Authentication.Google >= 8.0.25",
       "Microsoft.EntityFrameworkCore >= 8.0.25",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.25",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.25",
@@ -4053,6 +4160,18 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[8.0.25, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[8.0.25, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.25, )"

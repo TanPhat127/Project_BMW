@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+
+    <div class="card p-4 shadow" style="width: 420px; border-radius: 12px;">
+
+        <h4 class="text-center mb-4"><b>ĐĂNG KÝ</b></h4>
+
+        <form action="/Account/Register" method="post">
+
+            <!-- HỌ TÊN -->
+            <div class="mb-3">
+                <label for="inputName" class="form-label fw-bold">Họ tên</label>
+                <input type="text" id="inputName" name="HoTen"
+                       class="form-control border-2 border-dark" required placeholder="Họ và tên">
+            </div>
+
+            <!-- USERNAME -->
+            <div class="mb-3">
+                <label for="inputUsername" class="form-label fw-bold">Tên đăng nhập</label>
+                <input type="text" id="inputUsername" name="TenDangNhap"
+                       class="form-control border-2 border-dark" required placeholder="Tên đăng nhập">
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="mb-3">
+                <label for="inputPassword" class="form-label fw-bold">Mật khẩu</label>
+                <input type="password" id="inputPassword" name="MatKhau"
+                       class="form-control border-2 border-dark" required placeholder="Từ 8 - 20 ký tự">
+            </div>
+
+            <!-- NHẬP LẠI PASSWORD -->
+            <div class="mb-3">
+                <label for="inputRePassword" class="form-label fw-bold">Nhập lại mật khẩu</label>
+                <input type="password" id="inputRePassword" name="NhapLaiMatKhau"
+                       class="form-control border-2 border-dark" required placeholder="Xác nhận lại mật khẩu">
+            </div>
+
+            <!-- EMAIL -->
+            <div class="mb-3">
+                <label for="inputEmail" class="form-label fw-bold">Email</label>
+                <input type="email" id="inputEmail" name="Email"
+                       class="form-control border-2 border-dark" required placeholder="123@gmail.com">
+            </div>
+
+            <!-- REGISTER -->
+            <button type="submit" class="btn btn-dark w-100 fw-bold mb-3">
+                Đăng ký
+            </button>
+
+            <hr />
+
+            <p class="text-center fw-bold">Hoặc đăng nhập bằng</p>
+
+            <!-- GOOGLE -->
+            <a href="/Auth/LoginGoogle" class="btn btn-danger w-100 fw-bold mb-2">
+                Đăng nhập bằng Google
+            </a>
+
+            <!-- FACEBOOK -->
+            <a href="/Auth/LoginFacebook" class="btn btn-primary w-100 fw-bold">
+                Đăng nhập bằng Facebook
+            </a>
+
+        </form>
+    </div>
+</div>

@@ -15,55 +15,68 @@ public partial class OauthOidcsystemContext : DbContext
     {
     }
 
-    public virtual DbSet<ExternalLogin> ExternalLogins { get; set; }
+    public virtual DbSet<DangNhapNgoai> DangNhapNgoais { get; set; }
 
-    public virtual DbSet<LocalAccount> LocalAccounts { get; set; }
+    public virtual DbSet<PhienDangNhap> PhienDangNhaps { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<TaiKhoanNoiBo> TaiKhoanNoiBos { get; set; }
 
-    public virtual DbSet<UserSession> UserSessions { get; set; }
+    public virtual DbSet<TokenNguoiDung> TokenNguoiDungs { get; set; }
+
+    public virtual DbSet<UserInfo> UserInfos { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("name=default");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
-
-        modelBuilder.Entity<ExternalLogin>(entity =>
+        modelBuilder.Entity<DangNhapNgoai>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__External__3214EC07107710EB");
+            entity.HasKey(e => e.Id).HasName("PK__DangNhap__3214EC27AE8D0A58");
 
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.NgayLienKet).HasDefaultValueSql("(getdate())");
 
-            entity.HasOne(d => d.User).WithMany(p => p.ExternalLogins).HasConstraintName("FK_ExternalLogins_User");
+            entity.HasOne(d => d.IdNguoiDungNavigation).WithMany(p => p.DangNhapNgoais)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_DangNhapNgoai_NguoiDung");
         });
 
-        modelBuilder.Entity<LocalAccount>(entity =>
+        modelBuilder.Entity<PhienDangNhap>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__LocalAcc__3214EC07CA948A92");
-
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
-
-            entity.HasOne(d => d.User).WithMany(p => p.LocalAccounts).HasConstraintName("FK_LocalAccounts_User");
-        });
-
-        modelBuilder.Entity<User>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07704B9C34");
-
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
-            entity.Property(e => e.IsActive).HasDefaultValue(true);
-        });
-
-        modelBuilder.Entity<UserSession>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__UserSess__3214EC0776DA1EA6");
+            entity.HasKey(e => e.Id).HasName("PK__PhienDan__3214EC27D728BA4C");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            entity.Property(e => e.LoginTime).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.ThoiDiemDangNhap).HasDefaultValueSql("(getdate())");
 
-            entity.HasOne(d => d.User).WithMany(p => p.UserSessions).HasConstraintName("FK_UserSessions_User");
+            entity.HasOne(d => d.IdNguoiDungNavigation).WithMany(p => p.PhienDangNhaps)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Phien_NguoiDung");
+        });
+
+        modelBuilder.Entity<TaiKhoanNoiBo>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__TaiKhoan__3214EC277DF7391E");
+
+            entity.HasOne(d => d.IdNguoiDungNavigation).WithMany(p => p.TaiKhoanNoiBos)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_TaiKhoan_NguoiDung");
+        });
+
+        modelBuilder.Entity<TokenNguoiDung>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__TokenNgu__3214EC27ED0A56E6");
+
+            entity.HasOne(d => d.IdNguoiDungNavigation).WithMany(p => p.TokenNguoiDungs)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Token_NguoiDung");
+        });
+
+        modelBuilder.Entity<UserInfo>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__UserInfo__3214EC278836CE19");
+
+            entity.Property(e => e.NgayTao).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.TrangThai).HasDefaultValue(true);
         });
 
         OnModelCreatingPartial(modelBuilder);
